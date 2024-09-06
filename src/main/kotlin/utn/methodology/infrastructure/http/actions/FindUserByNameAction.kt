@@ -8,9 +8,9 @@ class FindUserByNameAction (
 ){
     fun execute(query: /*Insertar query*/): Map <String, String> {
         query
-                .validate()
-                .let {
-                    return handler.handle(it)
-                }
+            .validate()
+            .let {
+                return handler.handle(it)
+            }
     }
 }
