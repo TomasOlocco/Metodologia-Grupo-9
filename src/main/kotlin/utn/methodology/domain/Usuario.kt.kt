@@ -1,6 +1,6 @@
 package example.com.domain.entities
 
-class Usuario(
+class `Usuario.kt`(
     private val id: String,
     private var nombre: String,
     private var apellido: String,
