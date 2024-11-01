@@ -41,8 +41,9 @@ fun Application.module() {
     }
 
     configureDatabases()
-    //userRouter()
     errorHandler()
+    userRouter()
+    postRouter()
 }
 
 
