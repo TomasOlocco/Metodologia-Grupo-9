@@ -12,6 +12,9 @@ import io.ktor.server.request.*
 import io.ktor.server.response.*
 import org.slf4j.LoggerFactory
 import utn.methodology.infrastructure.persistence.configureDatabases
+import utn.methodology.infrastructure.persistence.repositories.PostRepositoryImpl
+import utn.methodology.application.services.PostService
+import utn.methodology.infrastructure.http.router.postRouter
 
 fun main(args: Array<String>) {
     io.ktor.server.netty.EngineMain.main(args)
@@ -27,7 +30,6 @@ fun Application.errorHandler() {
             } else {
                 call.respond(HttpStatusCode.InternalServerError, mapOf("error" to "Internal server error"))
             }
-
         }
     }
 }
@@ -40,14 +42,18 @@ fun Application.module() {
         }
     }
 
+    // Configuración de la base de datos
     configureDatabases()
+
+    // Creación del repositorio y servicio
+    val postRepository = PostRepositoryImpl() // Ajusta esta línea si necesitas pasar una instancia de base de datos
+    val postService = PostService(postRepository)
+
+    // Configuración de rutas
     userRouter()
+    postRouter(postService) // Pasa el servicio como parámetro para las rutas de posts
     errorHandler()
-    postRouter()
-
 }
-
-
 
 fun logError(call: ApplicationCall, cause: Throwable) {
     val log = LoggerFactory.getLogger("ErrorLogger")
