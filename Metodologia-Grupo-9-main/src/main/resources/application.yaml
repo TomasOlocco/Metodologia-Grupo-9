@@ -7,5 +7,6 @@ ktor:
 
 db:
     mongo:
+        uri: "mongodb+srv://trabajo:M7EENmRlLJMYqQyh@cluster0.1o7hn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
         user: 'trabajo'
         password: 'M7EENmRlLJMYqQyh'

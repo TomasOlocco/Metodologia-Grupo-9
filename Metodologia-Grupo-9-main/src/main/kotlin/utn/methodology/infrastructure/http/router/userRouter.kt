@@ -1,19 +1,9 @@
 package utn.methodology.infrastructure.http.router
 
-import example.com.application.commands.CreateUserCommand
-import example.com.application.commands.UpdateUserCommand
-import example.com.application.commandhandlers.CreateUserHandler
-import example.com.application.commandhandlers.DeleteUserHandler
-import example.com.application.commandhandlers.UpdateUserHandler
-import example.com.application.commands.DeleteUserCommand
-import example.com.application.queries.FindUserByIdQuery
-import example.com.application.queryhandlers.FindUserByIdHandler
-import example.com.infrastructure.http.actions.CreateUserAction
-import example.com.infrastructure.http.actions.DeleteUserAction
-import example.com.infrastructure.http.actions.FindUserByIdAction
-import example.com.infrastructure.http.actions.UpdateUserAction
-import example.com.infrastructure.persistence.MongoUserRepository
-import example.com.infrastructure.persistence.connectToMongoDB
+import utn.methodology.application.commands*
+import utn.methodology.infrastructure.http.actions*
+import utn.methodology.infrastructure.persistence*
+import utn.methodology.application.commandhandlers.*
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.plugins.*
