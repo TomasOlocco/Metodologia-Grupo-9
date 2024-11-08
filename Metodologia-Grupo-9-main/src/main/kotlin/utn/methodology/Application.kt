@@ -27,7 +27,6 @@ fun Application.errorHandler() {
             } else {
                 call.respond(HttpStatusCode.InternalServerError, mapOf("error" to "Internal server error"))
             }
-
         }
     }
 }
@@ -41,11 +40,8 @@ fun Application.module() {
     }
 
     configureDatabases()
-    //userRouter()
     errorHandler()
 }
-
-
 
 fun logError(call: ApplicationCall, cause: Throwable) {
     val log = LoggerFactory.getLogger("ErrorLogger")

@@ -1,6 +1,6 @@
 package utn.methodology.application.commandhandlers
 
-import utn.methodology.infrastructure.persistence.Repositories.UserMongoRepository
+import utn.methodology.infrastructure.persistence.RepoUsuarioDB
 import utn.methodology.domainentities.User
 
 class SearchUserHandler(private val repository: UserMongoRepository) {

@@ -1,6 +1,5 @@
 package utn.methodology.infrastructure.persistence
 
-
 import com.mongodb.client.MongoCollection
 import com.mongodb.client.MongoDatabase
 import com.mongodb.client.model.UpdateOptions
@@ -8,9 +7,6 @@ import io.github.cdimascio.dotenv.dotenv
 import org.bson.Document
 import utn.methodology.application.Contracts.UserRepository
 import utn.methodology.domainentities.User
-
-
-
 
 val collectionName: String = dotenv()["USER_COLLECTION_NAME"] ?: "UserCreate"
 

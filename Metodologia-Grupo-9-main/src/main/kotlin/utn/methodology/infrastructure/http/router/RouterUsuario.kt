@@ -5,6 +5,8 @@ import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
+package utn.methodology.infrastructure.http.router
+
 fun Application.userRouter() {
     val mongoDatabase = connectToMongoDB()
 

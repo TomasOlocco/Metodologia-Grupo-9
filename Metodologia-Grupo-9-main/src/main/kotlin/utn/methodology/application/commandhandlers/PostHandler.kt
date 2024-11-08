@@ -1,7 +1,7 @@
 package utn.methodology.application.commandhandlers
 
 import utn.methodology.domainentities.Post
-import utn.methodology.infrastructure.persistence.Repositories.PostMongoRepository
+import utn.methodology.infrastructure.persistence.PostRepository
 
 class PostHandler(
     private val postRepository: PostMongoRepository

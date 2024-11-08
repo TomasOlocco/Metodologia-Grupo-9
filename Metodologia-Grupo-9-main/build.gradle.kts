@@ -2,6 +2,19 @@
 val kotlin_version: String by project
 val logback_version: String by project
 val mongo_version: String by project
+import io.ktor.server.engine.embeddedServer
+        import io.ktor.server.netty.Netty
+
+fun main() {
+    embeddedServer(Netty, port = 8080) {
+        module() // Llama al módulo Ktor que configuraste
+    }.start(wait = true)
+}
+
+dependencies {
+    implementation("org.litote.kmongo:kmongo:4.2.9")
+}
+
 
 plugins {
     kotlin("jvm") version "2.0.0"
